@@ -1,0 +1,70 @@
+Page 1
+Amit Raj Reddy Dharam
+adharam@asu.edu | (903) 990-6812 | https://github.com/Ames-Zero | https://www.linkedin.com/in/arrd19/
+Education
+Arizona State University
+August 2024 – May 2026
+Masters in Computer Science
+GPA: 3.83/4.00
+Relevant Courses: Artificial Intelligence, Statistical Machine Learning, Data Mining, Cloud Computing, Natural Language Processing.
+Birla Institute of Technology and Science(BITS Pilani)
+August 2018 – July 2023
+Dual Degree: B.E. in Computer Science and M.Sc. in Mathematics (with Practice School)
+GPA: 7.93/10
+Relevant Courses: Data Structures and Algorithms(C/C++), OOP(JAVA), Machine Learning and Deep Learning(Python), DBMS(SQL).
+Experience
+Enterprise Technology at Arizona State University
+September 2024 - June 2025
+AI Data Science Student Worker
+Python, Pytorch, Transformers, Streamlit, Langchain, Ollama, OpenAI API, Neo4j, Git
+• Designed a Natural Language Query tool that allows users to filter, extract, and visualize data from multi-table databases with
+query execution accuracy above 90% utilizing conversational inputs.
+• Optimized text-to-SQL speed using advanced prompt engineering, fine-tuned LLMs, and GraphRAG, resulting in a 15% increase
+in query execution efficiency over baseline models.
+• Integrated LangChain for fast orchestration and Neo4j as a vector database for efficient semantic search, deployed on AWS EKS
+for scalable inference, and reduced response time by 30% over 100+ questions each session.
+Telus International AI CV
+July 2023 - July 2024
+Machine Learning Engineer 1
+Python, Pytorch, Transformers, NLP, Open3D, Git, Docker, AWS, Linux
+• Fine-tuned open-source LLMs on math and scientific topics using PEFT-based methods in a RAG pipeline, increasing manual
+question development throughput by 50% and reducing content generation time by 40%.
+• Tested the fine-tuned LLM against standard NLP benchmarks (MATH, MMLU etc.) and internal domain-specific datasets, yield-
+ing a +6% improvement in benchmark scores.
+• Evaluated the fine-tuned 3D object detection and tracking models (Voxel-based and DeepSORT) on the KITTI benchmark,
+achieving around 90% precision for object detection and 70% MOTA (Multiple Object Tracking Accuracy) for tracking.
+Telus International AI CV
+July 2022 - July 2023
+Machine Learning Engineer Intern
+Python, Pytorch, Sklearn, Open3D, Git, Docker, Linux
+• Prototyped a method for tracking identified bounding boxes over video sequences using DeepSORT and ByteTrack, which was
+tested on the MOT17 benchmark and achieved around 80% mAP for object identification and 75% IDF1 for multi-object tracking.
+• Built an automated data extraction pipeline from AWS S3 and SQL databases, resulting in a structured ML dataset library that
+increased model validation and testing efficiency by 50%.
+• Worked with the team to create and evaluate object detection strategies for 3D point clouds using Open3D. Deterministic ap-
+proaches proved to be 15% more accurate and simpler to use than point pillar-based approaches.
+Projects
+Tom-Riddle’s Diary (AI Chatbot agent)
+LINK
+Winner - InnovationHacks 2025
+Python, MCP-Chroma, NLP, FastAPI, ChromaDB, CrewAI, Git, AWS
+• Designed and deployed a FastAPI backend using ChromaDB on FastMCP servers to enable long-term semantic memory and
+efficient diary entry retrieval, reducing response time by 35% and supporting contextual AI reflections.
+• Integrated Google Gemini LLMs into a conversational backend pipeline, enabling natural language queries and emotional tone
+analysis—handling over 1,000 personalized interactions with >90% response relevance.
+Vizards (Natural language Query agent)
+LINK
+Runners up - Opportunity Hack 2024
+Python, Ollama, Pandas, Flask, NLP, Git, AWS
+• Engineered the backend of a nonprofit-focused CRM using Flask and MySQL, integrating surveys, Excel uploads, and manual
+inputs into a unified system, reducing data silos and improving internal data consistency by 30%.
+• Developed RESTful APIs and integrated a lightweight LLM-powered natural language agent, enabling non-technical users to
+query backend data in real time—cutting reliance on manual SQL lookups and improving data accessibility by 40%.
+Technical Skills
+Languages and Technologies: Python, JAVA, JavaScript, C, C++, C#, HTML, Flask, FastAPI, SQL, MongoDB, Neo4j.
+ML frameworks and libraries: PyTorch, TensorFlow, Pandas, PySpark, Scikit-Learn, NumPy, Matplotlib, Open3D, OpenCV.
+Natural Language Processing (NLP): Hugging Face Transformers, spaCy, BERT, OpenAI APIs, FastText, LangChain, TextBlob.
+Cloud & DevOps:Amazon web Services (AWS), Google Cloud Platform, Docker, Kubernetes, CircleCI, Git.
+Proficiency: Backend, Machine Learning, Data Engineering, AI engineering.
+
+
