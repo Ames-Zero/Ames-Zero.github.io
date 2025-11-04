@@ -150,13 +150,13 @@
 
 		// Handle back/forward
 		window.addEventListener('popstate', function(ev) {
-			var id = (ev.state && ev.state.section) || window.location.hash || '#education';
+			var id = (ev.state && ev.state.section) || window.location.hash || '#about';
 			activateSection(id, false);
 		});
 
 		// Initial route
 		$window.on('load', function() {
-			var initial = window.location.hash || '#education';
+			var initial = window.location.hash || '#about';
 			activateSection(initial, false);
 		});
 
