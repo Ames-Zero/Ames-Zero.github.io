@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component classes */
+@layer components {
+  .theme-toggle {
+    @apply fixed top-4 right-4 z-50 btn btn-circle btn-ghost text-xl;
+  }
+  
+  /* Preserve critical animations from main.css */
+  .is-preload * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Custom card styling */
+  .content-card {
+    @apply card bg-base-100 shadow-xl mb-6 transition-all duration-300;
+  }
+  
+  .content-card:hover {
+    @apply shadow-2xl;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Override base styles for better defaults */
+@layer base {
+  html {
+    @apply smooth-scroll;
+  }
+  
+  body {
+    @apply font-sans bg-base-100 text-base-content;
+  }
+}

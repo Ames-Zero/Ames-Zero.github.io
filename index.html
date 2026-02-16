@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="en">
+<html lang="en" id="html-root">
 	<head>
 		<title>Amit Raj Reddy Dharam - Portfolio</title>
 		<meta charset="utf-8" />
@@ -23,26 +23,32 @@
 		<!-- Preload critical background image for faster LCP -->
 		<link rel="preload" as="image" href="images/vertical-view-grand-canyon-usa.jpg" fetchpriority="high" />
 		
+		<!-- Tailwind CSS (Tailwind + DaisyUI) -->
+		<link rel="stylesheet" href="assets/css/tailwind.css" />
+		
+		<!-- Keep main.css temporarily for reference during migration -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<div class="header-content">
-						<h1><strong>Amit Raj Reddy Dharam</strong></h1>
-						<p class="proficiency">Machine Learning Engineer</p>
-						<p class="location"><i class="fas fa-map-marker-alt"></i> Tempe, Arizona</p>
-					</div>
-					<nav id="nav">
-						<ul>
-							<li><a href="#about" class="nav-link active">About</a></li>
-							<li><a href="#education" class="nav-link">Education</a></li>
-							<li><a href="#experience" class="nav-link">Experience</a></li>
-							<li><a href="#projects" class="nav-link">Projects</a></li>
-							<li><a href="#skills" class="nav-link">Skills</a></li>
-						</ul>
+		<header id="header" class="fixed lg:sticky top-0 left-0 w-full lg:w-1/3 xl:w-1/4 h-auto lg:h-screen bg-base-200 shadow-xl z-40">
+			<div class="container mx-auto px-6 py-8 lg:py-12">
+				<div class="text-center mb-8">
+					<h1 class="text-3xl lg:text-4xl font-bold text-base-content mb-2">Amit Raj Reddy Dharam</h1>
+					<p class="text-lg text-primary font-semibold mb-1">Machine Learning Engineer</p>
+					<p class="text-base text-base-content/70 flex items-center justify-center gap-2">
+						<i class="fas fa-map-marker-alt text-primary"></i> 
+						<span>Tempe, Arizona</span>
+					</p>
+				</div>
+				<nav id="nav" class="mb-8">
+					<ul class="menu menu-vertical lg:menu-lg w-full gap-1">
+						<li><a href="#about" class="nav-link active font-medium">About</a></li>
+						<li><a href="#education" class="nav-link font-medium">Education</a></li>
+						<li><a href="#experience" class="nav-link font-medium">Experience</a></li>
+						<li><a href="#projects" class="nav-link font-medium">Projects</a></li>
+						<li><a href="#skills" class="nav-link font-medium">Skills</a></li>
 					</nav>
 					<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
 						<i class="fas fa-moon theme-icon"></i>
@@ -51,78 +57,85 @@
 			</header>
 
 		<!-- Main -->
-			<div id="main">
-				<div class="main-content">
-
+		<div id="main" class="lg:ml-[33.333%] xl:ml-[25%] min-h-screen bg-base-100">
+			<div class="container mx-auto px-4 py-8 lg:px-8 lg:py-12 max-w-6xl">
 				<!-- About -->
 				<section id="about" class="page-section active" aria-hidden="false">
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-user"></i> About Me</h3>
-						</div>
-						<div class="about-intro">
+				<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<h2 class="card-title text-2xl lg:text-3xl mb-4 flex items-center gap-2">
+							<i class="fas fa-user text-primary"></i> 
+							<span>About Me</span>
+						</h2>
+						<div class="prose prose-lg max-w-none">
 							<p>I'm <strong>Amit Raj Reddy Dharam</strong>, a Computer Science Master's student at Arizona State University, graduating in May 2026. My coding journey began during my undergrad at BITS Pilani, where I pursued a dual degree in Computer Science and Mathematics. It was there that I discovered my passion for machine learning and AI, diving deep into data structures in C/C++, object-oriented programming in Java, and eventually deep learning with Python.</p>
 							
 							<p>Over the past few years, I've evolved from writing my first "Hello World" to building production ML systems, winning hackathons, and working as a Machine Learning Engineer at TELUS Digital. Today, I am focused on cloud computing, GenAI applications, and creating AI-powered solutions that make a real impact.</p>
 							
-							<h4>Hobbies & Interests</h4>
-							<ul class="hobbies-list">
-								<li>🏆 <strong>Hackathon enthusiast</strong>: I love the thrill of building projects under pressure and have won multiple competitions including Sunhacks 2025 and InnovationHacks 2025</li>
-								<li>🤖 <strong>Tinkering with AI projects</strong>: from personal smart assistants to computer vision applications</li>
-								<li>☁️ <strong>Cloud computing</strong>: deploying scalable systems on AWS</li>
-								<li>📚 <strong>Continuous learner</strong>: always exploring new ML frameworks, tools, and techniques</li>
-								<li>💻 <strong>Open source contributor</strong>: giving back to the community and collaborating on projects that matter</li>
-								<li>🏈 <strong>ASU sports fan</strong>: catching Sun Devil games when I can</li>
-								<li>🏴‍☠️ <strong>Watching anime when not debugging</strong>: convinced that the One Piece is real!!</li>
+							<h4 class="text-xl font-semibold mt-6 mb-3 flex items-center gap-2">
+								<span>Hobbies & Interests</span>
+							</h4>
+							<ul class="space-y-2">
+								<li class="flex gap-2 items-start">🏆 <strong>Hackathon enthusiast</strong>: I love the thrill of building projects under pressure and have won multiple competitions including Sunhacks 2025 and InnovationHacks 2025</li>
+								<li class="flex gap-2 items-start">🤖 <strong>Tinkering with AI projects</strong>: from personal smart assistants to computer vision applications</li>
+								<li class="flex gap-2 items-start">☁️ <strong>Cloud computing</strong>: deploying scalable systems on AWS</li>
+								<li class="flex gap-2 items-start">📚 <strong>Continuous learner</strong>: always exploring new ML frameworks, tools, and techniques</li>
+								<li class="flex gap-2 items-start">💻 <strong>Open source contributor</strong>: giving back to the community and collaborating on projects that matter</li>
+								<li class="flex gap-2 items-start">🏈 <strong>ASU sports fan</strong>: catching Sun Devil games when I can</li>
+								<li class="flex gap-2 items-start">🏴‍☠️ <strong>Watching anime when not debugging</strong>: convinced that the One Piece is real!!</li>
 							</ul>
 						</div>
-					</div>
 
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-envelope"></i> Get In Touch</h3>
-						</div>
-						<div class="contact-details">
-							<div class="contact-item">
-								<i class="fas fa-envelope"></i>
+<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<h2 class="card-title text-2xl lg:text-3xl mb-4 flex items-center gap-2">
+							<i class="fas fa-envelope text-primary"></i> 
+							<span>Get In Touch</span>
+						</h2>
+						<div class="grid gap-4 mb-6">
+							<div class="flex gap-4 items-start p-4 bg-base-200 rounded-lg">
+								<i class="fas fa-envelope text-primary text-xl mt-1"></i>
 								<div>
-									<strong>Email</strong>
-									<p><a href="mailto:reddy.amitraj@gmail.com">reddy.amitraj@gmail.com</a></p>
+									<strong class="text-base-content font-semibold">Email</strong>
+									<p class="text-base-content/80"><a href="mailto:reddy.amitraj@gmail.com" class="link link-hover link-primary">reddy.amitraj@gmail.com</a></p>
 								</div>
 							</div>
-							<div class="contact-item">
-								<i class="fas fa-map-marker-alt"></i>
+							<div class="flex gap-4 items-start p-4 bg-base-200 rounded-lg">
+								<i class="fas fa-map-marker-alt text-primary text-xl mt-1"></i>
 								<div>
-									<strong>Location</strong>
-									<p>Tempe, Arizona, USA</p>
+									<strong class="text-base-content font-semibold">Location</strong>
+									<p class="text-base-content/80">Tempe, Arizona, USA</p>
 								</div>
 							</div>
 						</div>
 						
-						<div class="social-links">
-							<a href="https://github.com/Ames-Zero" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+						<div class="flex flex-wrap gap-3">
+							<a href="https://github.com/Ames-Zero" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2" aria-label="GitHub Profile">
 								<i class="fab fa-github"></i>
 								<span>GitHub</span>
 							</a>
-							<a href="https://www.linkedin.com/in/arrd19/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+							<a href="https://www.linkedin.com/in/arrd19/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2" aria-label="LinkedIn Profile">
 								<i class="fab fa-linkedin"></i>
 								<span>LinkedIn</span>
 							</a>
-							<a href="https://devpost.com/reddy-amitraj?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Devpost Profile">
+							<a href="https://devpost.com/reddy-amitraj?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-primary gap-2" aria-label="Devpost Profile">
 								<i class="fas fa-code"></i>
 								<span>Devpost</span>
 							</a>
 						</div>
+						</div>
 					</div>
 
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-file-alt"></i> Resume</h3>
-						</div>
-						<div class="resume-section">
-							<p>View my resume to learn more about my experience, skills, and accomplishments.</p>
-							<div class="resume-actions">
-								<a href="assets/resume/Amit_Raj_Reddy_Dharam_resume.pdf" target="_blank" rel="noopener noreferrer" class="button primary icon solid fa-eye">
+<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<h2 class="card-title text-2xl lg:text-3xl mb-4 flex items-center gap-2">
+							<i class="fas fa-file-alt text-primary"></i> 
+							<span>Resume</span>
+						</h2>
+						<p class="text-base-content/80 mb-4">View my resume to learn more about my experience, skills, and accomplishments.</p>
+						<div class="card-actions">
+							<a href="assets/resume/Amit_Raj_Reddy_Dharam_resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary gap-2">
+								<i class="fas fa-eye"></i>
 									<span>View Resume</span>
 								</a>
 							</div>
@@ -132,43 +145,63 @@
 
 				<!-- Education -->
 				<section id="education" class="page-section" aria-hidden="true">
-					<header class="major">
-						<h2><i class="fas fa-graduation-cap"></i> Education</h2>
-					</header>
-					
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-university"></i> Arizona State University</h3>
-							<span class="date-badge">August 2024 – May 2026</span>
+				<header class="mb-8">
+					<h2 class="text-3xl lg:text-4xl font-bold flex items-center gap-3 text-base-content">
+						<i class="fas fa-graduation-cap text-primary"></i> 
+						<span>Education</span>
+					</h2>
+				</header>
+				
+				<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 mb-4">
+							<h3 class="card-title text-xl lg:text-2xl flex items-center gap-2">
+								<i class="fas fa-university text-primary"></i> 
+								<span>Arizona State University</span>
+							</h3>
+							<span class="badge badge-secondary badge-outline badge-lg">August 2024 – May 2026</span>
 						</div>
-						<p class="degree" style="text-align: center;"><strong>Masters in Computer Science</strong></p>
-						<p class="gpa" style="text-align: center;"><i class="fas fa-award"></i> GPA: 4.00/4.00</p>
-						<div class="info-section">
-							<h4><i class="fas fa-book"></i> Relevant Courses</h4>
-						<div class="skill-tags">
-							<span class="skill-tag">Artificial Intelligence</span>
-							<span class="skill-tag">Statistical Machine Learning</span>
-							<span class="skill-tag">Data Mining</span>
-							<span class="skill-tag">Cloud Computing</span>
-							<span class="skill-tag">Natural Language Processing</span>
+						<p class="text-center text-lg font-semibold text-base-content mb-2">Masters in Computer Science</p>
+						<p class="text-center text-base text-primary flex items-center justify-center gap-2 mb-4">
+							<i class="fas fa-award"></i> 
+							<span>GPA: 4.00/4.00</span>
+						</p>
+						<div>
+							<h4 class="text-lg font-semibold mb-3 flex items-center gap-2">
+								<i class="fas fa-book text-primary"></i> 
+								<span>Relevant Courses</span>
+							</h4>
+							<div class="flex flex-wrap gap-2">
+								<span class="badge badge-primary badge-md">Artificial Intelligence</span>
+								<span class="badge badge-primary badge-md">Statistical Machine Learning</span>
+								<span class="badge badge-primary badge-md">Data Mining</span>
+								<span class="badge badge-primary badge-md">Cloud Computing</span>
+								<span class="badge badge-primary badge-md">Natural Language Processing</span>
+							</div>
 						</div>
-						</div>
-					</div>
 
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-university"></i> BITS Pilani, Hyderabad Campus</h3>
-							<span class="date-badge">August 2018 – July 2023</span>
+<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 mb-4">
+							<h3 class="card-title text-xl lg:text-2xl flex items-center gap-2">
+								<i class="fas fa-university text-primary"></i> 
+								<span>BITS Pilani, Hyderabad Campus</span>
+							</h3>
+							<span class="badge badge-secondary badge-outline badge-lg">August 2018 – July 2023</span>
 						</div>
-						<p class="degree" style="text-align: center;"><strong>Dual Degree: B.E. in Computer Science and M.Sc. in Mathematics</strong></p>
+						<p class="text-center text-lg font-semibold text-base-content mb-4">Dual Degree: B.E. in Computer Science and M.Sc. in Mathematics</p>
 						<!-- <p class="gpa"><i class="fas fa-award"></i> GPA: 7.93/10</p> -->
-						<div class="info-section">
-							<h4><i class="fas fa-book"></i> Relevant Courses</h4>
-						<div class="skill-tags">
-							<span class="skill-tag">Data Structures and Algorithms (C/C++)</span>
-							<span class="skill-tag">Object Oriented Programming (JAVA)</span>
-							<span class="skill-tag">Machine Learning and Deep Learning (Python)</span>
-							<span class="skill-tag">Database Management Systems (SQL)</span>
+						<div>
+							<h4 class="text-lg font-semibold mb-3 flex items-center gap-2">
+								<i class="fas fa-book text-primary"></i> 
+								<span>Relevant Courses</span>
+							</h4>
+							<div class="flex flex-wrap gap-2">
+								<span class="badge badge-primary badge-md">Data Structures and Algorithms (C/C++)</span>
+								<span class="badge badge-primary badge-md">Object Oriented Programming (JAVA)</span>
+								<span class="badge badge-primary badge-md">Machine Learning and Deep Learning (Python)</span>
+								<span class="badge badge-primary badge-md">Database Management Systems (SQL)</span>
+							</div>
 						</div>
 						</div>
 					</div>
@@ -176,28 +209,46 @@
 
 				<!-- Experience -->
 				<section id="experience" class="page-section" aria-hidden="true">
-					<header class="major">
-						<h2><i class="fas fa-briefcase"></i> Experience</h2>
-					</header>
-					
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-laptop-code"></i> AI Data Science Student Worker (Part-Time)</h3>
-							<span class="date-badge">September 2024 - June 2025</span>
+				<header class="mb-8">
+					<h2 class="text-3xl lg:text-4xl font-bold flex items-center gap-3 text-base-content">
+						<i class="fas fa-briefcase text-primary"></i> 
+						<span>Experience</span>
+					</h2>
+				</header>
+				
+				<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 mb-4">
+							<h3 class="card-title text-xl lg:text-2xl flex items-center gap-2">
+								<i class="fas fa-laptop-code text-primary"></i> 
+								<span>AI Data Science Student Worker (Part-Time)</span>
+							</h3>
+							<span class="badge badge-secondary badge-outline badge-lg">September 2024 - June 2025</span>
 						</div>
-						<p class="company"><i class="fas fa-building"></i> Enterprise Technology at Arizona State University</p>
-						<div class="info-section">
-							<h4><i class="fas fa-tasks"></i> Key Achievements</h4>
-							<ul class="achievement-list">
-								<li><i class="fas fa-check-circle"></i> Implemented the backend for a NL2SQL conversational agent using Python, FastAPI allowing users to query, filter and
-display data from multi-table databases using conversational inputs, with query execution accuracy over 85%</li>
-								<li><i class="fas fa-check-circle"></i> Optimized natural language to SQL module responses by incorporating team lead and engineer feedback into prompt
-engineering, fine-tuned LLMs, and GraphRAG implementation, leading in a 5% increase in accuracy</li>
-								<li><i class="fas fa-check-circle"></i> Integrated LangChain for fast orchestration and Neo4j for efficient semantic search using embeddings; utilized AWS EKS
-for scalable inference; and reduced response time by 30% over 100+ questions per session</li>
+						<p class="text-base-content/80 flex items-center gap-2 mb-4">
+							<i class="fas fa-building text-primary"></i> 
+							<span>Enterprise Technology at Arizona State University</span>
+						</p>
+						<div>
+							<h4 class="text-lg font-semibold mb-3 flex items-center gap-2">
+								<i class="fas fa-tasks text-primary"></i> 
+								<span>Key Achievements</span>
+							</h4>
+							<ul class="space-y-3">
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Implemented the backend for a NL2SQL conversational agent using Python, FastAPI allowing users to query, filter and display data from multi-table databases using conversational inputs, with query execution accuracy over 85%</span>
+								</li>
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Optimized natural language to SQL module responses by incorporating team lead and engineer feedback into prompt engineering, fine-tuned LLMs, and GraphRAG implementation, leading in a 5% increase in accuracy</span>
+								</li>
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Integrated LangChain for fast orchestration and Neo4j for efficient semantic search using embeddings; utilized AWS EKS for scalable inference; and reduced response time by 30% over 100+ questions per session</span>
+								</li>
 							</ul>
 						</div>
-					</div>
 
 					<div class="content-card">
 						<div class="card-header">
@@ -205,9 +256,9 @@ for scalable inference; and reduced response time by 30% over 100+ questions per
 							<span class="date-badge">July 2023 - June 2024</span>
 						</div>
 						<p class="company"><i class="fas fa-building"></i> Telus International AI CV</p>
-						<div class="info-section">
+						<div class="space-y-4">
 							<h4><i class="fas fa-tasks"></i> Key Achievements</h4>
-							<ul class="achievement-list">
+							<ul class="space-y-3">
 								<li><i class="fas fa-check-circle"></i> Instruction-tuned open-source LLMs with PyTorch on scientific topics using PEFT-based methods for synthetic data creation
 using a RAG pipeline. Increased manual question generation throughput by 50%, reducing generation time by 40%</li>
 								<li><i class="fas fa-check-circle"></i> Evaluated a custom trained 3D object detection (Voxel-based) and tracking models(DeepSORT) on the KITTI benchmark,
@@ -217,54 +268,71 @@ datasets, achieving a +6% improvement in benchmark scores and 50% faster evaluat
 							</ul>
 						</div>
 					</div>
-					<div class="content-card">
-						<div class="card-header">
-							<h3><i class="fas fa-robot"></i> Machine Learning Engineer Intern</h3>
-							<span class="date-badge">August 2022 - July 2024</span>
+<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
+					<div class="card-body">
+						<div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-2 mb-4">
+							<h3 class="card-title text-xl lg:text-2xl flex items-center gap-2">
+								<i class="fas fa-robot text-primary"></i> 
+								<span>Machine Learning Engineer Intern</span>
+							</h3>
+							<span class="badge badge-secondary badge-outline badge-lg">August 2022 - July 2024</span>
 						</div>
-						<p class="company"><i class="fas fa-building"></i> Telus International AI CV</p>
-						<div class="info-section">
-							<h4><i class="fas fa-tasks"></i> Key Achievements</h4>
-							<ul class="achievement-list">
-								<li><i class="fas fa-check-circle"></i> Prototyped DeepSORT and ByteTrack algorithms for bounding box tracking over video sequences resulted in 80% mAP
-object recognition and 75% IDF1 multi-object tracking accuracy, as confirmed against MOT17 benchmarks</li>
-								<li><i class="fas fa-check-circle"></i> Improved image segmentation precision by 23% across 15,000+ annotated frames by uptraining U-Net and Mask R-CNN
-architectures using the CityScapes dataset, reducing manual annotation time from 8 hours to 5 hours per dataset batch</li>
-								<li><i class="fas fa-check-circle"></i> Deployed ML APIs serving 15+ active projects with sub-200 ms response times by establishing FastAPI and TorchServe
-endpoints, containerizing the segmentation models with Docker, and hosting on AWS EC2 with JWT authentication</li>
+						<p class="text-base-content/80 flex items-center gap-2 mb-4">
+							<i class="fas fa-building text-primary"></i> 
+							<span>Telus International AI CV</span>
+						</p>
+						<div>
+							<h4 class="text-lg font-semibold mb-3 flex items-center gap-2">
+								<i class="fas fa-tasks text-primary"></i> 
+								<span>Key Achievements</span>
+							</h4>
+							<ul class="space-y-3">
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Prototyped DeepSORT and ByteTrack algorithms for bounding box tracking over video sequences resulted in 80% mAP object recognition and 75% IDF1 multi-object tracking accuracy, as confirmed against MOT17 benchmarks</span>
+								</li>
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Improved image segmentation precision by 23% across 15,000+ annotated frames by uptraining U-Net and Mask R-CNN architectures using the CityScapes dataset, reducing manual annotation time from 8 hours to 5 hours per dataset batch</span>
+								</li>
+								<li class="flex gap-3 items-start">
+									<i class="fas fa-check-circle text-primary mt-1 flex-shrink-0"></i>
+									<span>Deployed ML APIs serving 15+ active projects with sub-200 ms response times by establishing FastAPI and TorchServe endpoints, containerizing the segmentation models with Docker, and hosting on AWS EC2 with JWT authentication</span>
+								</li>
 							</ul>
+						</div>
 						</div>
 					</div>
 				</section>
 
 				<!-- Projects -->
 				<section id="projects" class="page-section" aria-hidden="true">
-					<header class="major">
-						<h2><i class="fas fa-code"></i> Projects</h2>
+					<header class="mb-8">
+						<h2 class="text-3xl lg:text-4xl font-bold flex items-center gap-3 text-base-content"><i class="fas fa-code text-primary"></i> <span>Projects</span></h2>
 					</header>
-					<div class="content-card project-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-book-open"></i> WardrobeAI (Reccomendations and Image Generation)</h3>
-							<span class="award-badge"><i class="fas fa-trophy"></i> Winner Sunhacks, Sept 2025 </span>
+							<span class="badge badge-accent badge-lg gap-2"><i class="fas fa-trophy"></i> Winner Sunhacks, Sept 2025 </span>
 						</div>
-						<div class="tech-stack">
+						<div class="mb-4">
 							<h4><i class="fas fa-tools"></i> Technologies</h4>
-							<div class="tech-tags">
-								<span class="tech-tag">Python</span>
-								<span class="tech-tag">Next.js</span>
-								<span class="tech-tag">React</span>
-								<span class="tech-tag">NLP</span>
-								<span class="tech-tag">FastAPI</span>
-								<span class="tech-tag">MongoDB</span>
-								<span class="tech-tag">Google Vertex AI</span>
-								<span class="tech-tag">Amazon Web Services</span>
-								<span class="tech-tag">Google Cloud Platform</span>
-								<span class="tech-tag">GitHub</span>
+							<div class="flex flex-wrap gap-2">
+								<span class="badge badge-ghost">Python</span>
+								<span class="badge badge-ghost">Next.js</span>
+								<span class="badge badge-ghost">React</span>
+								<span class="badge badge-ghost">NLP</span>
+								<span class="badge badge-ghost">FastAPI</span>
+								<span class="badge badge-ghost">MongoDB</span>
+								<span class="badge badge-ghost">Google Vertex AI</span>
+								<span class="badge badge-ghost">Amazon Web Services</span>
+								<span class="badge badge-ghost">Google Cloud Platform</span>
+								<span class="badge badge-ghost">GitHub</span>
 							</div>
 						</div>
-						<div class="info-section">
+						<div class="space-y-4">
 							<h4><i class="fas fa-lightbulb"></i> Key Features</h4>
-							<ul class="achievement-list">
+							<ul class="space-y-3">
 								<li><i class="fas fa-rocket"></i> Built a Python backend that integrates with MongoDB and AWS S3, linking Gemini chat API and Gemini Nano-Banana
 models across 5+ microservices to provide virtual try-ons and outfit recommendations for over 3000 clothing items</li>
 								<li><i class="fas fa-rocket"></i> Coordinated a 4-person team to architect and deploy a LinUCB based recommendation engine with conversational
@@ -272,27 +340,27 @@ chatbot, generating personalized outfit suggestions for 10+ occasions like birth
 							</ul>
 						</div>
 					</div>
-					<div class="content-card project-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-book-open"></i> Tom-Riddle's Diary (AI Chatbot agent)</h3>
-							<span class="award-badge"><i class="fas fa-trophy"></i> Winner - InnovationHacks 2025</span>
+							<span class="badge badge-accent badge-lg gap-2"><i class="fas fa-trophy"></i> Winner - InnovationHacks 2025</span>
 						</div>
-						<div class="tech-stack">
+						<div class="mb-4">
 							<h4><i class="fas fa-tools"></i> Technologies</h4>
-							<div class="tech-tags">
-								<span class="tech-tag">Python</span>
-								<span class="tech-tag">MCP-Chroma</span>
-								<span class="tech-tag">NLP</span>
-								<span class="tech-tag">FastAPI</span>
-								<span class="tech-tag">ChromaDB</span>
-								<span class="tech-tag">CrewAI</span>
-								<span class="tech-tag">Git</span>
-								<span class="tech-tag">Google Cloud Platform</span>
+							<div class="flex flex-wrap gap-2">
+								<span class="badge badge-ghost">Python</span>
+								<span class="badge badge-ghost">MCP-Chroma</span>
+								<span class="badge badge-ghost">NLP</span>
+								<span class="badge badge-ghost">FastAPI</span>
+								<span class="badge badge-ghost">ChromaDB</span>
+								<span class="badge badge-ghost">CrewAI</span>
+								<span class="badge badge-ghost">Git</span>
+								<span class="badge badge-ghost">Google Cloud Platform</span>
 							</div>
 						</div>
-						<div class="info-section">
+						<div class="space-y-4">
 							<h4><i class="fas fa-lightbulb"></i> Key Features</h4>
-							<ul class="achievement-list">
+							<ul class="space-y-3">
 								<li><i class="fas fa-rocket"></i> Engineered and integrated a python, FastAPI backend using ChromaDB to enable long-term semantic memory and efficient
 information retrieval, reducing response time by 35% and supporting contextual AI reflections</li>
 								<li><i class="fas fa-rocket"></i> Integrated Google Gemini LLMs into a conversational backend pipeline, enabling natural language queries and persona
@@ -301,26 +369,26 @@ based tone generation handling over 1,000 personalized interactions with >90% re
 						</div>
 					</div>
 
-					<div class="content-card project-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-magic"></i> Vizards (Natural language Query agent)</h3>
-							<span class="award-badge"><i class="fas fa-medal"></i> Runners up - Opportunity Hack 2024</span>
+							<span class="badge badge-accent badge-lg gap-2"><i class="fas fa-medal"></i> Runners up - Opportunity Hack 2024</span>
 						</div>
-						<div class="tech-stack">
+						<div class="mb-4">
 							<h4><i class="fas fa-tools"></i> Technologies</h4>
-							<div class="tech-tags">
-								<span class="tech-tag">Python</span>
-								<span class="tech-tag">Ollama</span>
-								<span class="tech-tag">Pandas</span>
-								<span class="tech-tag">Flask</span>
-								<span class="tech-tag">NLP</span>
-								<span class="tech-tag">Git</span>
-								<span class="tech-tag">AWS</span>
+							<div class="flex flex-wrap gap-2">
+								<span class="badge badge-ghost">Python</span>
+								<span class="badge badge-ghost">Ollama</span>
+								<span class="badge badge-ghost">Pandas</span>
+								<span class="badge badge-ghost">Flask</span>
+								<span class="badge badge-ghost">NLP</span>
+								<span class="badge badge-ghost">Git</span>
+								<span class="badge badge-ghost">AWS</span>
 							</div>
 						</div>
-						<div class="info-section">
+						<div class="space-y-4">
 							<h4><i class="fas fa-lightbulb"></i> Key Features</h4>
-							<ul class="achievement-list">
+							<ul class="space-y-3">
 								<li><i class="fas fa-rocket"></i> Programmed the backend of a nonprofit-focused CRM using Flask and MySQL, integrating surveys, Excel uploads, and manual inputs into a unified system, reducing data silos and improving internal data consistency by 30%</li>
 								<li><i class="fas fa-rocket"></i> Developed RESTful APIs and incorporated a small language model (SLM) query agent, allowing non-technical users to query data in real time, reducing dependency on manual SQL lookups, and increasing data accessibility by 40%</li>
 							</ul>
@@ -330,85 +398,85 @@ based tone generation handling over 1,000 personalized interactions with >90% re
 
 				<!-- Skills -->
 				<section id="skills" class="page-section" aria-hidden="true">
-					<header class="major">
-						<h2><i class="fas fa-wrench"></i> Technical Skills</h2>
+					<header class="mb-8">
+						<h2 class="text-3xl lg:text-4xl font-bold flex items-center gap-3 text-base-content"><i class="fas fa-wrench text-primary"></i> <span>Technical Skills</span></h2>
 					</header>
 					
-					<div class="content-card skills-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-code"></i> Languages and Technologies</h3>
 						</div>
-						<div class="skill-tags">
-							<span class="skill-tag">Python</span>
-							<span class="skill-tag">JAVA</span>
-							<span class="skill-tag">JavaScript</span>
-							<span class="skill-tag">C</span>
-							<span class="skill-tag">C++</span>
-							<span class="skill-tag">C#</span>
-							<span class="skill-tag">HTML</span>
-							<span class="skill-tag">Flask</span>
-							<span class="skill-tag">FastAPI</span>
-							<span class="skill-tag">SQL</span>
-							<span class="skill-tag">MongoDB</span>
-							<span class="skill-tag">Neo4j</span>
+						<div class="flex flex-wrap gap-2">
+							<span class="badge badge-primary badge-md">Python</span>
+							<span class="badge badge-primary badge-md">JAVA</span>
+							<span class="badge badge-primary badge-md">JavaScript</span>
+							<span class="badge badge-primary badge-md">C</span>
+							<span class="badge badge-primary badge-md">C++</span>
+							<span class="badge badge-primary badge-md">C#</span>
+							<span class="badge badge-primary badge-md">HTML</span>
+							<span class="badge badge-primary badge-md">Flask</span>
+							<span class="badge badge-primary badge-md">FastAPI</span>
+							<span class="badge badge-primary badge-md">SQL</span>
+							<span class="badge badge-primary badge-md">MongoDB</span>
+							<span class="badge badge-primary badge-md">Neo4j</span>
 						</div>
 					</div>
 
-					<div class="content-card skills-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-brain"></i> ML Frameworks and Libraries</h3>
 						</div>
-						<div class="skill-tags">
-							<span class="skill-tag">PyTorch</span>
-							<span class="skill-tag">TensorFlow</span>
-							<span class="skill-tag">Pandas</span>
-							<span class="skill-tag">PySpark</span>
-							<span class="skill-tag">Scikit-Learn</span>
-							<span class="skill-tag">NumPy</span>
-							<span class="skill-tag">Matplotlib</span>
-							<span class="skill-tag">Open3D</span>
-							<span class="skill-tag">OpenCV</span>
+						<div class="flex flex-wrap gap-2">
+							<span class="badge badge-primary badge-md">PyTorch</span>
+							<span class="badge badge-primary badge-md">TensorFlow</span>
+							<span class="badge badge-primary badge-md">Pandas</span>
+							<span class="badge badge-primary badge-md">PySpark</span>
+							<span class="badge badge-primary badge-md">Scikit-Learn</span>
+							<span class="badge badge-primary badge-md">NumPy</span>
+							<span class="badge badge-primary badge-md">Matplotlib</span>
+							<span class="badge badge-primary badge-md">Open3D</span>
+							<span class="badge badge-primary badge-md">OpenCV</span>
 						</div>
 					</div>
 
-					<div class="content-card skills-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-comments"></i> Natural Language Processing (NLP)</h3>
 						</div>
-						<div class="skill-tags">
-							<span class="skill-tag">Hugging Face Transformers</span>
-							<span class="skill-tag">spaCy</span>
-							<span class="skill-tag">BERT</span>
-							<span class="skill-tag">OpenAI APIs</span>
-							<span class="skill-tag">FastText</span>
-							<span class="skill-tag">LangChain</span>
-							<span class="skill-tag">TextBlob</span>
+						<div class="flex flex-wrap gap-2">
+							<span class="badge badge-primary badge-md">Hugging Face Transformers</span>
+							<span class="badge badge-primary badge-md">spaCy</span>
+							<span class="badge badge-primary badge-md">BERT</span>
+							<span class="badge badge-primary badge-md">OpenAI APIs</span>
+							<span class="badge badge-primary badge-md">FastText</span>
+							<span class="badge badge-primary badge-md">LangChain</span>
+							<span class="badge badge-primary badge-md">TextBlob</span>
 						</div>
 					</div>
 
-					<div class="content-card skills-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
 						</div>
-						<div class="skill-tags">
-							<span class="skill-tag">AWS</span>
-							<span class="skill-tag">Google Cloud Platform</span>
-							<span class="skill-tag">Docker</span>
-							<span class="skill-tag">Kubernetes</span>
-							<span class="skill-tag">CircleCI</span>
-							<span class="skill-tag">Git</span>
+						<div class="flex flex-wrap gap-2">
+							<span class="badge badge-primary badge-md">AWS</span>
+							<span class="badge badge-primary badge-md">Google Cloud Platform</span>
+							<span class="badge badge-primary badge-md">Docker</span>
+							<span class="badge badge-primary badge-md">Kubernetes</span>
+							<span class="badge badge-primary badge-md">CircleCI</span>
+							<span class="badge badge-primary badge-md">Git</span>
 						</div>
 					</div>
 
-					<div class="content-card skills-card">
+					<div class="card bg-base-100 shadow-xl mb-6 hover:shadow-2xl transition-all duration-300">
 						<div class="card-header">
 							<h3><i class="fas fa-star"></i> Proficiency Areas</h3>
 						</div>
-						<div class="skill-tags proficiency-tags">
-							<span class="skill-tag featured">Backend Development</span>
-							<span class="skill-tag featured">Machine Learning</span>
-							<span class="skill-tag featured">Data Engineering</span>
-							<span class="skill-tag featured">AI Engineering</span>
+						<div class="flex flex-wrap gap-2 proficiency-tags">
+							<span class="badge badge-primary badge-md featured">Backend Development</span>
+							<span class="badge badge-primary badge-md featured">Machine Learning</span>
+							<span class="badge badge-primary badge-md featured">Data Engineering</span>
+							<span class="badge badge-primary badge-md featured">AI Engineering</span>
 						</div>
 					</div>
 				</section>
@@ -735,19 +803,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/Ames-Zero" class="icon brands fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/arrd19/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://devpost.com/reddy-amitraj?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" class="icon-devpost" target="_blank" rel="noopener noreferrer" aria-label="Devpost"><span class="label">Devpost</span></a></li>
-						<li><a href="mailto:reddy.amitraj@gmail.com" class="icon solid fa-envelope" aria-label="Email"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; 2025 Amit Raj Reddy Dharam</li><li>Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer" class="footer footer-center bg-base-200 text-base-content p-8 lg:ml-[33.333%] xl:ml-[25%]">
+			<nav class="flex flex-wrap gap-4 mb-4">
+				<a href="https://github.com/Ames-Zero" class="link link-hover flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+					<i class="fab fa-github text-xl"></i>
+					<span>GitHub</span>
+				</a>
+				<a href="https://www.linkedin.com/in/arrd19/" class="link link-hover flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+					<i class="fab fa-linkedin text-xl"></i>
+					<span>LinkedIn</span>
+				</a>
+				<a href="https://devpost.com/reddy-amitraj?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" class="link link-hover flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="Devpost">
+					<i class="fas fa-code text-xl"></i>
+					<span>Devpost</span>
+				</a>
+				<a href="mailto:reddy.amitraj@gmail.com" class="link link-hover flex items-center gap-2" aria-label="Email">
+					<i class="fas fa-envelope text-xl"></i>
+					<span>Email</span>
+				</a>
+			</nav>
+			<aside class="text-sm opacity-75">
+				<p>&copy; 2025 Amit Raj Reddy Dharam | Design: <a href="http://html5up.net" target="_blank" rel="noopener noreferrer" class="link link-hover">HTML5 UP</a></p>
+			</aside>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

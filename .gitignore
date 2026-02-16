@@ -19,3 +19,10 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Node.js dependencies
+node_modules/
+
+# Build artifacts (we'll commit tailwind.css for GitHub Pages)
+# Uncomment the line below if using CI/CD to build automatically
+# assets/css/tailwind.css

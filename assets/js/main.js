@@ -160,13 +160,21 @@
 			activateSection(initial, false);
 		});
 
-	// Theme toggle functionality
+	// Theme toggle functionality (Updated for Tailwind CSS dark mode)
 		function initTheme() {
 			const savedTheme = localStorage.getItem('theme') || 'light';
-			const $body = $('body');
+			const $htmlRoot = $('#html-root');
 			const $themeIcon = $('.theme-icon');
 			
-			$body.attr('data-theme', savedTheme);
+			// Apply dark class to html element for Tailwind
+			if (savedTheme === 'dark') {
+				$htmlRoot.addClass('dark');
+			} else {
+				$htmlRoot.removeClass('dark');
+			}
+			
+			// Also keep data-theme for backward compatibility with main.css
+			$('body').attr('data-theme', savedTheme);
 			updateThemeIcon($themeIcon, savedTheme);
 		}
 		
@@ -179,11 +187,20 @@
 		}
 		
 		$('#theme-toggle').on('click', function() {
+			const $htmlRoot = $('#html-root');
 			const $body = $('body');
 			const $themeIcon = $('.theme-icon');
 			const currentTheme = $body.attr('data-theme') || 'light';
 			const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 			
+			// Toggle dark class on html for Tailwind
+			if (newTheme === 'dark') {
+				$htmlRoot.addClass('dark');
+			} else {
+				$htmlRoot.removeClass('dark');
+			}
+			
+			// Keep data-theme for backward compatibility
 			$body.attr('data-theme', newTheme);
 			localStorage.setItem('theme', newTheme);
 			updateThemeIcon($themeIcon, newTheme);
