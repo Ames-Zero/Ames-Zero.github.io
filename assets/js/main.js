@@ -166,15 +166,16 @@
 			const $htmlRoot = $('#html-root');
 			const $themeIcon = $('.theme-icon');
 			
-			// Apply dark class to html element for Tailwind
+			// Apply data-theme to html element for DaisyUI
+			$htmlRoot.attr('data-theme', savedTheme);
+			
+			// Apply dark class for Tailwind dark mode
 			if (savedTheme === 'dark') {
 				$htmlRoot.addClass('dark');
 			} else {
 				$htmlRoot.removeClass('dark');
 			}
 			
-			// Also keep data-theme for backward compatibility with main.css
-			$('body').attr('data-theme', savedTheme);
 			updateThemeIcon($themeIcon, savedTheme);
 		}
 		
@@ -188,10 +189,12 @@
 		
 		$('#theme-toggle').on('click', function() {
 			const $htmlRoot = $('#html-root');
-			const $body = $('body');
 			const $themeIcon = $('.theme-icon');
-			const currentTheme = $body.attr('data-theme') || 'light';
+			const currentTheme = $htmlRoot.attr('data-theme') || 'light';
 			const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+			
+			// Apply data-theme to html for DaisyUI
+			$htmlRoot.attr('data-theme', newTheme);
 			
 			// Toggle dark class on html for Tailwind
 			if (newTheme === 'dark') {
@@ -200,8 +203,6 @@
 				$htmlRoot.removeClass('dark');
 			}
 			
-			// Keep data-theme for backward compatibility
-			$body.attr('data-theme', newTheme);
 			localStorage.setItem('theme', newTheme);
 			updateThemeIcon($themeIcon, newTheme);
 		});

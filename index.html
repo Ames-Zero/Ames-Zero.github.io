@@ -31,6 +31,35 @@
 		
 		<!-- Keep main.css temporarily for reference during migration -->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<!-- Custom navigation styles -->
+		<style>
+			.nav-link {
+				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+			.nav-link.active {
+				background-color: rgba(73, 191, 157, 0.15);
+				color: #49bf9d;
+			}
+			.nav-link:hover {
+				background-color: rgba(73, 191, 157, 0.1);
+			}
+			
+			/* Footer styling to blend with background */
+			#footer {
+				background: rgba(0, 0, 0, 0.5);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+			}
+			#footer a {
+				color: #49bf9d;
+				text-decoration: none;
+			}
+			#footer a:hover {
+				color: #5dd4ae;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -52,10 +81,11 @@
 						<li><a href="#experience" class="nav-link font-medium">Experience</a></li>
 						<li><a href="#projects" class="nav-link font-medium">Projects</a></li>
 						<li><a href="#skills" class="nav-link font-medium">Skills</a></li>
-					</nav>
-					<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-						<i class="fas fa-moon theme-icon"></i>
-					</button>
+				</ul>
+			</nav>
+			<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+				<i class="fas fa-moon theme-icon"></i>
+			</button>
 				</div>
 			</header>
 
@@ -806,7 +836,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- Footer -->
-		<footer id="footer" class="footer footer-center bg-base-200 text-base-content p-8 lg:ml-[33.333%] xl:ml-[25%]">
+	<footer id="footer" class="footer footer-center bg-transparent text-base-content p-8">
 			<nav class="flex flex-wrap gap-4 mb-4">
 				<a href="https://github.com/Ames-Zero" class="link link-hover flex items-center gap-2" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
 					<i class="fab fa-github text-xl"></i>
@@ -832,7 +862,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/main.js" defer></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
