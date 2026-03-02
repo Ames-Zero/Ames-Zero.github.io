@@ -4334,3 +4334,94 @@ input, select, textarea {
 #header {
 	scroll-behavior: smooth;
 }
+
+/* Project Image Styles */
+.project-image {
+	width: 100%;
+	overflow: hidden;
+	border-radius: 20px;
+	margin-bottom: 1.5em;
+	position: relative;
+}
+
+.project-image .image.fit {
+	margin: 0;
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+}
+
+.project-image .image.fit img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	display: block;
+}
+
+.project-image:hover .image.fit {
+	transform: scale(1.05);
+}
+
+.project-image:hover .image.fit img {
+	filter: brightness(1.1);
+}
+
+/* Dark mode image adjustments */
+[data-theme="dark"] .project-image .image.fit img {
+	filter: brightness(0.9);
+}
+
+[data-theme="dark"] .project-image:hover .image.fit img {
+	filter: brightness(1.05);
+}
+
+/* Project Links Section */
+.project-links {
+	display: flex;
+	gap: 0.8em;
+	margin-top: 1.5em;
+	flex-wrap: wrap;
+}
+
+.project-links .button {
+	flex: 1 1 auto;
+	min-width: calc(50% - 0.4em);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Dark mode button adjustments */
+[data-theme="dark"] .project-links .button {
+	border-color: rgba(95, 211, 175, 0.5);
+	color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="dark"] .project-links .button:hover {
+	border-color: #5fd3af;
+	color: #5fd3af !important;
+	background-color: rgba(95, 211, 175, 0.15);
+}
+
+[data-theme="dark"] .project-links .button.primary {
+	background-color: #5fd3af;
+	border-color: #5fd3af;
+	color: #ffffff !important;
+}
+
+[data-theme="dark"] .project-links .button.primary:hover {
+	background-color: #6dd9b8;
+	border-color: #6dd9b8;
+}
+
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 480px) {
+	.project-links {
+		flex-direction: column;
+	}
+	
+	.project-links .button {
+		width: 100%;
+		min-width: 100%;
+	}
+}
