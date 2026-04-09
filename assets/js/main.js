@@ -21,62 +21,6 @@
 
 		};
 
-	// ============================================
-	// Lightweight Google Analytics Helper Functions
-	// ============================================
-	
-	// Helper function to track GA events safely
-	function trackGAEvent(eventName, eventParams) {
-		if (typeof gtag === 'function' && localStorage.getItem('ga_consent') === 'accepted') {
-			gtag('event', eventName, eventParams);
-		}
-	}
-	
-	// Initialize GA if consent already given
-	function initializeGA() {
-		if (localStorage.getItem('ga_consent') === 'accepted' && typeof gtag === 'function') {
-			gtag('consent', 'update', {
-				'analytics_storage': 'granted'
-			});
-			gtag('js', new Date());
-			gtag('config', 'GA_MEASUREMENT_ID', {
-				'anonymize_ip': true,
-				'cookie_flags': 'SameSite=None;Secure'
-			});
-		}
-	}
-	
-	// ============================================
-	// Cookie Consent Banner Logic
-	// ============================================
-	
-	$window.on('load', function() {
-		var consent = localStorage.getItem('ga_consent');
-		var $banner = $('#cookie-consent-banner');
-		
-		// Show banner if no consent decision has been made
-		if (!consent) {
-			setTimeout(function() {
-				$banner.fadeIn(400);
-			}, 1000); // Show after 1 second delay
-		} else if (consent === 'accepted') {
-			initializeGA();
-		}
-		
-		// Accept button handler
-		$('#cookie-accept').on('click', function() {
-			localStorage.setItem('ga_consent', 'accepted');
-			initializeGA();
-			$banner.fadeOut(300);
-		});
-		
-		// Decline button handler
-		$('#cookie-decline').on('click', function() {
-			localStorage.setItem('ga_consent', 'declined');
-			$banner.fadeOut(300);
-		});
-	});
-
 	// Breakpoints.
 		breakpoints({
 			xlarge:  [ '1281px',  '1800px' ],
@@ -249,41 +193,5 @@
 		$window.on('load', function() {
 			initTheme();
 		});
-
-	// ============================================
-	// Lightweight Event Tracking (Essential Only)
-	// ============================================
-	
-	$window.on('load', function() {
-		// Track resume downloads
-		$('a[href*="resume"], a[href*=".pdf"]').on('click', function() {
-			trackGAEvent('resume_download', {
-				'event_category': 'Download'
-			});
-		});
-		
-		// Track LinkedIn clicks
-		$('a[href*="linkedin.com"]').on('click', function() {
-			trackGAEvent('linkedin_click', {
-				'event_category': 'Social'
-			});
-		});
-		
-		// Track GitHub clicks
-		$('a[href*="github.com"]').on('click', function() {
-			trackGAEvent('github_click', {
-				'event_category': 'Social'
-			});
-		});
-		
-		// Track project link clicks
-		$('.project-card a').on('click', function() {
-			var projectTitle = $(this).closest('.project-card').find('h3').text() || 'Project';
-			trackGAEvent('project_click', {
-				'event_category': 'Projects',
-				'event_label': projectTitle
-			});
-		});
-	});
 
 })(jQuery);

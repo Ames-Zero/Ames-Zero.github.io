@@ -23,31 +23,6 @@
 		<!-- Preconnect to external domains for better performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://www.googletagmanager.com" />
-		
-		<!-- Google Analytics GA4 -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-		<script>
-			// Initialize dataLayer
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			
-			// Check for consent before initializing GA
-			var consent = localStorage.getItem('ga_consent');
-			if (consent === 'accepted') {
-				gtag('js', new Date());
-				gtag('config', 'GA_MEASUREMENT_ID', {
-					'anonymize_ip': true,
-					'cookie_flags': 'SameSite=None;Secure'
-				});
-			} else if (consent !== 'declined') {
-				// Default consent mode - analytics disabled until user accepts
-				gtag('consent', 'default', {
-					'analytics_storage': 'denied',
-					'ad_storage': 'denied'
-				});
-			}
-		</script>
 		
 		<!-- Preload critical font for faster LCP -->
 		<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/sourcesanspro/v23/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2" crossorigin />
@@ -59,20 +34,7 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Cookie Consent Banner -->
-		<div id="cookie-consent-banner" class="cookie-consent" style="display: none;">
-			<div class="cookie-consent-content">
-				<p>
-					<strong>🍪 Privacy Notice</strong><br>
-					This site uses Google Analytics to understand visitor engagement and improve your experience. 
-					We collect anonymous data about page views and interactions.
-				</p>
-				<div class="cookie-consent-buttons">
-					<button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept Analytics</button>
-					<button id="cookie-decline" class="cookie-btn cookie-btn-decline">Decline</button>
-				</div>
-			</div>
-		</div>
+
 
 		<!-- Header -->
 			<header id="header">
