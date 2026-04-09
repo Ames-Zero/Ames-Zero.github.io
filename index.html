@@ -263,6 +263,44 @@ endpoints, containerizing the segmentation models with Docker, and hosting on AW
 						<h3 class="category-title">Hackathon Winners & Academic Projects</h3>
 					</div>
 					
+					<!-- travelMate -->
+					<div class="content-card project-card">
+						<div class="project-image">
+							<span class="image fit"><img src="images/projects/travelmate.png" alt="TravelMate" /></span>
+						</div>
+						<div class="card-header">
+							<h3>TravelMate (Multi-agent Travel Planner)</h3>
+							<div class="award-actions">
+								<span class="award-badge">Winner Innovation Hack 2.0, Apr 2026 </span>
+								<div class="inline-links">
+									<a href="https://github.com/Ames-Zero/travelMate" class="icon-button" title="View Code"><i class="fab fa-github"></i></a>
+									<a href="https://www.youtube.com/watch?v=BPfNL_wyxjE" class="icon-button" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="tech-stack">
+							<h4>Technologies</h4>
+							<div class="tech-tags">
+								<span class="tech-tag"><span>Python</span></span>
+								<span class="tech-tag"><span>Next.js</span></span>
+								<span class="tech-tag"><span>Google Gemini LLM</span></span>
+								<span class="tech-tag"><span>React</span></span>
+								<span class="tech-tag"><span>FastAPI</span></span>
+								<span class="tech-tag"><span>ElevenLabs</span></span>
+								<span class="tech-tag"><span>Google Cloud Platform</span></span>
+								<span class="tech-tag"><span>Vercel</span></span>
+								<span class="tech-tag"><span>GitHub</span></span>
+							</div>
+						</div>
+						<div class="info-section">
+							<h4>Key Features</h4>
+							<ul class="achievement-list">
+								<li>Created a multi-agent AI travel planner with a Python/FastAPI backend that coordinated specialized agents to make itineraries, check feasibility, and ground the plans in the real world. The whole thing was built and tested on Google Vertex AI and AI Studio, and Google Maps and Weather APIs were used to make practical, day-by-day trip plans.</li>
+								<li>Engineered and integrated expressive voice agents that use ElevenLabs' conversational AI capabilities to handle natural language queries on trip itineraries and travel blogs, wired through an MCP-based multi-agent pipeline with a responsive frontend in Next.js, TypeScript, Tailwind CSS, and session-aware auth via Auth0, and deployed on Vercel.</li>
+							</ul>
+						</div>
+					</div>
+
 					<!-- accio -->
 					<div class="content-card project-card">
 						<div class="project-image">
@@ -295,9 +333,8 @@ endpoints, containerizing the segmentation models with Docker, and hosting on AW
 						<div class="info-section">
 							<h4>Key Features</h4>
 							<ul class="achievement-list">
-								<li>A simplified PDF knowledge extraction and Q&A chatbot system for college demo. Extracts knowledge from pre-ingested company PDFs, builds a Neo4j knowledge graph with vector embeddings, and provides a Streamlit chat interface with grounded citations</li>
-								<!-- <li>Coordinated a 4-person team to architect and deploy a LinUCB based recommendation engine with conversational
-chatbot, generating personalized outfit suggestions for 10+ occasions like birthdays, weddings etc</li> -->
+								<li>Built a hybrid RAG pipeline for extracting knowledge from PDFs by combining Neo4j graph traversal, vector similarity, and full-text search. IBM DocLing was used for layout-aware extraction, and local sentence transformers were used for zero-API-call retrieval. Google Gemini handled knowledge triplet extraction and answer generation through a FastAPI backend.</li>
+								<li>Made a grounded citation UI with Streamlit that shows the top five answers with PDF screenshot overlays and bounding box highlights. Containerized Neo4j knowledge base in Docker, Docling (IBM) for deep layout parsing, and pdf2image for 300 DPI page rendering.</li>
 							</ul>
 						</div>
 					</div>
@@ -330,9 +367,8 @@ chatbot, generating personalized outfit suggestions for 10+ occasions like birth
 						<div class="info-section">
 							<h4>Key Features</h4>
 							<ul class="achievement-list">
-								<li>An interactive Streamlit dashboard that visualizes H1B prevailing wage data across US geographical regions with filtering capabilities for job roles and wage levels.</li>
-								<!-- <li>Coordinated a 4-person team to architect and deploy a LinUCB based recommendation engine with conversational
-chatbot, generating personalized outfit suggestions for 10+ occasions like birthdays, weddings etc</li> -->
+								<li>Developed an interactive H1B wage dashboard that shows U.S. Department of Labor data on the prevailing wage in each state and county. This lets you compare salaries for more than 850 job roles and 4 wage levels. It was built with Python and Streamlit and is now live on Streamlit Cloud.</li>
+								<li>Added a salary classification feature to the dashboard that shows how a user's input salary compares to regional wage levels in real time. It shows whether it falls into Level I to IV across any geography, with dynamic stat cards (avg, median, min, max) for each filtered view.</li>
 							</ul>
 						</div>
 					</div>
@@ -370,10 +406,8 @@ chatbot, generating personalized outfit suggestions for 10+ occasions like birth
 						<div class="info-section">
 							<h4>Key Features</h4>
 							<ul class="achievement-list">
-								<li>Built a Python backend that integrates with MongoDB and AWS S3, linking Gemini chat API and Gemini Nano-Banana
-models across 5+ microservices to provide virtual try-ons and outfit recommendations for over 3000 clothing items</li>
-								<li>Coordinated a 4-person team to architect and deploy a LinUCB based recommendation engine with conversational
-chatbot, generating personalized outfit suggestions for 10+ occasions like birthdays, weddings etc</li>
+								<li>Made a browser extension for AI-powered virtual try-ons that overlays chosen clothes on a user model in real time and checks for duplicate clothes before the user buys them. The extension uses Google Gemini and Nano Banana for AI fitting, MongoDB for storing wardrobe and preference data, and AWS S3 for safe storage of clothing images. The backend is written in Python and FastAPI, and the frontend is written in React and Next.js.</li>
+								<li>Built a chatbot that helps people choose outfits for different occasions (like parties and events) by mixing and matching items from their own wardrobes. It can find duplicates using smart MongoDB queries on color, type, and style. The whole thing is containerized with Docker and sent through a CI/CD pipeline on GCP.</li>
 							</ul>
 						</div>
 					</div>
@@ -409,10 +443,8 @@ chatbot, generating personalized outfit suggestions for 10+ occasions like birth
 						<div class="info-section">
 							<h4>Key Features</h4>
 							<ul class="achievement-list">
-								<li>Engineered and integrated a python, FastAPI backend using ChromaDB to enable long-term semantic memory and efficient
-information retrieval, reducing response time by 35% and supporting contextual AI reflections</li>
-								<li>Integrated Google Gemini LLMs into a conversational backend pipeline, enabling natural language queries and persona
-based tone generation handling over 1,000 personalized interactions with >90% response relevance</li>
+								<li>Designed an AI-powered personal diary agent with long-term conversational memory; users can log thoughts, query past entries by date, and reflect on emotional patterns over time, powered by Google GenAI and PyTorch Transformers for empathetic response generation, with ChromaDB handling semantic search and persistent memory retention via a FastAPI backend.</li>
+								<li>Architected a reflective personal dashboard with daily summaries, emotional tone tracking, and habit checkboxes wired through an MCP integration layer for agent tool orchestration, with an immersive React.js frontend featuring a disappearing-input interaction design.</li>
 							</ul>
 						</div>
 					</div>
@@ -524,8 +556,8 @@ based tone generation handling over 1,000 personalized interactions with >90% re
 						<div class="info-section">
 							<h4>Key Features</h4>
 							<ul class="achievement-list">
-								<li>Programmed the backend of a nonprofit-focused CRM using Flask and MySQL, integrating surveys, Excel uploads, and manual inputs into a unified system, reducing data silos and improving internal data consistency by 30%</li>
-								<li>Developed RESTful APIs and incorporated a small language model (SLM) query agent, allowing non-technical users to query data in real time, reducing dependency on manual SQL lookups, and increasing data accessibility by 40%</li>
+								<li>Built a single CRM platform for San Gabriel Valley Habitat for Humanity that combines survey responses, Excel uploads, and manual inputs into one pipeline with role-based access control and data encryption. It has a Python/Flask backend, a MySQL database, and a React frontend with Google Sheets and Data Studio dashboards that change dynamically.</li>
+								<li>Created an NLP-powered chatbot that allows staff to query real-time organizational data in natural language, reducing reporting friction across volunteer, homeowner, and home preservation workflows; built with LLM + NLP tooling; and deployed as a cost-effective solution on free-tier Google infrastructure.</li>
 							</ul>
 						</div>
 					</div>
